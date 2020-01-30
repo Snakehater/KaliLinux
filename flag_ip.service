@@ -1,0 +1,13 @@
+[Unit]
+Description=Script that publishes ip address to my server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/KaliLinux/
+ExecStart=/root/KaliLinux/flag_ip_start.sh
+
+[Install]
+WantedBy=multi-user.target
